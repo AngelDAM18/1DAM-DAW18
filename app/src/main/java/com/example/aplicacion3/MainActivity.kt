@@ -53,7 +53,7 @@ import android.view.View as View1
          Contruirdialogo.setTitle(getString(R.string.DialogoMainTitle)) //Titulo del cuadro de dialogo
          Contruirdialogo.setMessage(getString(R.string.DialogoMainMenssage)) //Mensaje del texto que sale en el cuadro "¿Quiere salir de la aplicacion?
          Contruirdialogo.setNegativeButton(getString(R.string.DialogoMainBotonCancelar), null)
-         Contruirdialogo.setPositiveButton(getString(R.string.DialogoMainAceptar), DialogInterface.OnClickListener { dialog, which ->
+         Contruirdialogo.setPositiveButton(getString(R.string.DialogoMainAceptar), DialogInterface.OnClickListener { _, _ ->
              //  Toast.makeText(MenuActivity.this,"Saliendo...",Toast.LENGTH_LONG).show();
             salir = true
 
