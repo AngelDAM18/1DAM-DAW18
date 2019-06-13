@@ -107,7 +107,7 @@ public class login extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menus = getMenuInflater();
-        menus.inflate(R.menu.menu,menu);
+        menus.inflate(R.menu.menulogin,menu);
         return true;
     }
 
@@ -115,9 +115,6 @@ public class login extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-           /* case R.id.menuConfig:
-                abrirConfigracion();
-                return true;*/
             case R.id.menuAyuda:
                 menudeAyuda();
                 return true;
