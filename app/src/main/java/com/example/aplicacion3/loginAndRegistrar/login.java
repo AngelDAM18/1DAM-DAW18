@@ -95,7 +95,8 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //  Toast.makeText(MenuActivity.this,"Saliendo...",Toast.LENGTH_LONG).show();
-                finish();
+                //finishAndRemoveTask();
+                finishAffinity();
             }
         });
 

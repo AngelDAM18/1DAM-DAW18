@@ -20,21 +20,24 @@ import android.view.View as View1
 
     }
      private val miespera = Runnable {
-         while (miProgreso < 100) {
+         while (miProgreso < 100 && !salir) {
              mostrarbarraprogreso()
              try {
-                 Thread.sleep(150)
+                 Thread.sleep(100)
              } catch (t: Throwable) {
              }
                 Log.d("Mi Progeso", miProgreso.toString())
+             Log.d("", salir.toString())
 
          }
          Log.d("Mi Progeso", salir.toString())
         if (!salir){
             val intento1 = Intent(this, login::class.java)
             startActivity(intento1)
+        }else{
+            finishAndRemoveTask()
         }
-         finish()
+
 
 
      }
@@ -61,6 +64,7 @@ import android.view.View as View1
 
          val MostrarDialogo=Contruirdialogo.create()
          MostrarDialogo.show()
+
      }
 
 
