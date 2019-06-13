@@ -23,5 +23,12 @@
     <string name="DialogoMenuAyudaCancelar">Cancelar</string>
     <string name="DialogoMenuAyudaAceptar">Aceptar</string>
     <string name="Menuactualizar">Actualizar</string>
+    <string name="menuCerrarSesion">Cerrar Sesion</string>
+
+    <!-- Menu cerrar sesion-->
+    <string name="DialogoOfertaTitle">¿Cerrar Sesion?</string>
+    <string name="DialogoOfertaMenssage">Estas seguro que quieres salir de la aplicacion?</string>
+    <string name="DialogoOfertaBotonCancelar">Cancelar</string>
+    <string name="DialogoOfertaBotonAceptar">Aceptar</string>
 
 </resources>

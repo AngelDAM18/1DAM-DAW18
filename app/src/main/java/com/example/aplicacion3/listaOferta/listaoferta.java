@@ -168,7 +168,6 @@ public void CargarLista(ArrayList<String> datos){
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()){
             case R.id.menuActualizar:
                 obtieneDatos();
@@ -176,10 +175,15 @@ public void CargarLista(ArrayList<String> datos){
             case R.id.menuAyuda:
                 menudeAyuda();
                 return true;
+            case R.id.menuCerrarSesion:
+                salirAplicacion();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 
     private void menudeAyuda() {
         //Cuadro de dialogo de ayuda con un boton de aceptar
@@ -192,6 +196,31 @@ public void CargarLista(ArrayList<String> datos){
             public void onClick(DialogInterface dialog, int which) {
                 //  Toast.makeText(MenuActivity.this,"Saliendo...",Toast.LENGTH_LONG).show();
                 closeContextMenu();
+            }
+        });
+
+        Dialog MostrarDialogo= Contruirdialogo.create();
+        MostrarDialogo.show();
+    }
+
+
+    private void salirAplicacion() {
+        onBackPressed();
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder Contruirdialogo = new AlertDialog.Builder(this);
+        Contruirdialogo.setTitle(R.string.DialogoOfertaTitle); //Titulo del cuadro de dialogo
+        Contruirdialogo.setMessage(getString(R.string.DialogoOfertaMenssage)); //Mensaje del texto que sale en el cuadro "Estas seguro que quieres salir de la aplicacion?
+        Contruirdialogo.setNegativeButton(R.string.DialogoOfertaBotonCancelar,null);
+        Contruirdialogo.setPositiveButton(R.string.DialogoOfertaBotonAceptar, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //  Toast.makeText(MenuActivity.this,"Saliendo...",Toast.LENGTH_LONG).show();
+                //finish();
+                finishAndRemoveTask();
             }
         });
 
