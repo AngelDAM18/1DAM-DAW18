@@ -1,7 +1,8 @@
-package com.example.aplicacion3;
+package com.example.aplicacion3.listaOferta;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import com.example.aplicacion3.R;
 
 public class detalleOferta extends AppCompatActivity {
 

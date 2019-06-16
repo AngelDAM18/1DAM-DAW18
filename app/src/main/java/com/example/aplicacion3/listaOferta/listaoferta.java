@@ -16,7 +16,6 @@ import android.widget.ListView;
 import com.example.aplicacion3.MetodosComunes.Comunes;
 import com.example.aplicacion3.MetodosComunes.ConstantesURL;
 import com.example.aplicacion3.R;
-import com.example.aplicacion3.detalleOferta;
 import com.example.aplicacion3.listaOferta.objeto.tablaOfertas;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -150,7 +149,7 @@ public void CargarLista(ArrayList<String> datos){
                 //abrir otra activity para mas descripcion
                 Log.d("listaOferta", id+" ");
 
-                comun.cargarSiguienteActividad(getApplication(), detalleOferta.class);
+                comun.cargarSiguienteActividad(getApplication(), detalleOferta.class,listaTablaOfertas.get((int) id));
 
             }
         });
