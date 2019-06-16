@@ -82,9 +82,9 @@ public ArrayList<String> obtieneDatosJSON(String responseBody){
         String texto ;
 
         for (int i =0;i<obtejoJSON.length();i++){
-            texto = obtejoJSON.getJSONObject(i).getString("id") + " " +
+            texto = //obtejoJSON.getJSONObject(i).getString("id") + " " +
                     obtejoJSON.getJSONObject(i).getString("empresa") +" "+
-                    obtejoJSON.getJSONObject(i).getString("correoEmpresa");
+                    obtejoJSON.getJSONObject(i).getString("fechaPublicacion");
             listado.add(texto);
 
 
@@ -147,9 +147,9 @@ public void CargarLista(ArrayList<String> datos){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //abrir otra activity para mas descripcion
-                Log.d("listaOferta", id+" ");
-
-                comun.cargarSiguienteActividad(getApplication(), detalleOferta.class,listaTablaOfertas.get((int) id));
+                Log.d("listaOferta", position+" ");
+                Log.d("Obejeto", listaTablaOfertas.get(position).toString());
+                startActivity(comun.cargarSiguienteActividad(getApplication(), detalleOferta.class,listaTablaOfertas.get(position)));
 
             }
         });
