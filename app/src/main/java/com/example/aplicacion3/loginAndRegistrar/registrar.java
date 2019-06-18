@@ -21,7 +21,7 @@ public class registrar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar);
-            btnAtras=findViewById(R.id.btn_atras_registrar);
+
 
         editTextEmail=findViewById(R.id.text_email_login);
         editTextEmailConfimacion=findViewById(R.id.editText_email2);
@@ -29,6 +29,7 @@ public class registrar extends AppCompatActivity {
         editTextPassword=findViewById(R.id.text_password_login);
         editTextPasswordConfirmacion=findViewById(R.id.editText_password2);
 
+        btnAtras=findViewById(R.id.btn_atras_registrar);
         BtnLogin=findViewById(R.id.btn_registrar_registrar);
 
     }

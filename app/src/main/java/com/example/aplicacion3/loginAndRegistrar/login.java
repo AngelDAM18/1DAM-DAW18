@@ -3,7 +3,6 @@ package com.example.aplicacion3.loginAndRegistrar;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -20,11 +19,9 @@ import com.example.aplicacion3.listaOferta.listaoferta;
 
 public class login extends AppCompatActivity {
 
-    Button btnLogear,btnRegistrar;
-        EditText textCorreo,textPasswd;
-    Intent abrirOtra;
-
-    Comunes comun = new Comunes();
+    private Button btnLogear,btnRegistrar;
+    private EditText textCorreo,textPasswd;
+    private Comunes comun = new Comunes();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +49,6 @@ public class login extends AppCompatActivity {
                  * abrirOtra = new Intent(getApplicationContext(), registrar.class);
                  * startActivity(abrirOtra);
                  */
-            //comun.cargarSiguienteActividad(login.this , registrar.class);
 
             }
         });
@@ -99,7 +95,8 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 //  Toast.makeText(MenuActivity.this,"Saliendo...",Toast.LENGTH_LONG).show();
-                finish();
+                //finishAndRemoveTask();
+                finishAffinity();
             }
         });
 
@@ -111,7 +108,7 @@ public class login extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menus = getMenuInflater();
-        menus.inflate(R.menu.menu,menu);
+        menus.inflate(R.menu.menulogin,menu);
         return true;
     }
 
@@ -119,9 +116,6 @@ public class login extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-           /* case R.id.menuConfig:
-                abrirConfigracion();
-                return true;*/
             case R.id.menuAyuda:
                 menudeAyuda();
                 return true;

@@ -2,26 +2,39 @@
     <string name="app_name">Ofertas Internas IES</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="login">Login</string>
+    <string name="login">Conectar</string>
     <string name="registrar">Registrar</string>
     <string name="todo">TODO</string>
-    <string name="Imagen">Ies Agustobriga</string>
+    <string name="Imagen">IES Augustobriga</string>
     <string name="Password">Contraseña</string>
     <string name="volver">Atras</string>
-    <string name="menuAyuda">Informacion</string>
+    <string name="menuAyuda">Ayuda</string>
 
     <!-- Dialogo del main de salir -->
 
-    <string name="DialogoMainTitle">¿salir?</string>
-    <string name="DialogoMainMenssage">Estas seguro que quieres cerrar la aplicacion</string>
+    <string name="DialogoMainTitle">¿Salir?</string>
+    <string name="DialogoMainMenssage">¿Estas seguro que quieres cerrar la aplicacion?</string>
     <string name="DialogoMainBotonCancelar">Cancelar</string>
     <string name="DialogoMainAceptar">Aceptar</string>
 
     <!-- Texto del cuadro de dialogo de ayuda -->
     <string name="DialogoMenuAyudaTitle">Ayuda</string>
-    <string name="DialogoMenuAyudaMensage">Copyright IES Agustobriga.</string>
+    <string name="DialogoMenuAyudaMensage">Copyright IES Augustobriga.</string>
     <string name="DialogoMenuAyudaCancelar">Cancelar</string>
     <string name="DialogoMenuAyudaAceptar">Aceptar</string>
     <string name="Menuactualizar">Actualizar</string>
+    <string name="menuCerrarSesion">Cerrar Sesion</string>
+
+    <!-- Menu cerrar sesion-->
+    <string name="DialogoOfertaTitle">¿Cerrar Sesion?</string>
+    <string name="DialogoOfertaMenssage">¿Estas seguro que quieres salir de la aplicacion?</string>
+    <string name="DialogoOfertaBotonCancelar">Cancelar</string>
+    <string name="DialogoOfertaBotonAceptar">Aceptar</string>
+    <string name="nombre_empresa">Nombre empresa</string>
+    <string name="correo">Correo:</string>
+    <string name="telefono">telefono</string>
+    <string name="localidad">localidad</string>
+    <string name="fecha">fecha</string>
+    <string name="descripcion">Descripcion</string>
 
 </resources>

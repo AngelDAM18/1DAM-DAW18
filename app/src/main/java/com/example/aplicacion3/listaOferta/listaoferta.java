@@ -16,7 +16,6 @@ import android.widget.ListView;
 import com.example.aplicacion3.MetodosComunes.Comunes;
 import com.example.aplicacion3.MetodosComunes.ConstantesURL;
 import com.example.aplicacion3.R;
-import com.example.aplicacion3.detalleOferta;
 import com.example.aplicacion3.listaOferta.objeto.tablaOfertas;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -76,16 +75,16 @@ public class listaoferta extends AppCompatActivity {
 public ArrayList<String> obtieneDatosJSON(String responseBody){
 
     ArrayList<String> listado = new ArrayList<>();
-
+        listaTablaOfertas.clear();
     try {
         JSONArray obtejoJSON= new JSONArray(responseBody);
 
         String texto ;
 
         for (int i =0;i<obtejoJSON.length();i++){
-            texto = obtejoJSON.getJSONObject(i).getString("id") + " " +
-                    obtejoJSON.getJSONObject(i).getString("empresa") +" "+
-                    obtejoJSON.getJSONObject(i).getString("correoEmpresa");
+            texto = //obtejoJSON.getJSONObject(i).getString("id") + " " +
+                    obtejoJSON.getJSONObject(i).getString("empresa") +" Fecha: "+
+                    obtejoJSON.getJSONObject(i).getString("fechaPublicacion");
             listado.add(texto);
 
 
@@ -148,9 +147,9 @@ public void CargarLista(ArrayList<String> datos){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //abrir otra activity para mas descripcion
-                Log.d("listaOferta", id+" ");
-
-                comun.cargarSiguienteActividad(getApplication(), detalleOferta.class);
+                Log.d("listaOferta", position+" ");
+                Log.d("Obejeto", listaTablaOfertas.get(position).toString());
+                startActivity(comun.cargarSiguienteActividad(getApplication(), detalleOferta.class,listaTablaOfertas.get(position)));
 
             }
         });
@@ -168,7 +167,6 @@ public void CargarLista(ArrayList<String> datos){
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()){
             case R.id.menuActualizar:
                 obtieneDatos();
@@ -176,10 +174,15 @@ public void CargarLista(ArrayList<String> datos){
             case R.id.menuAyuda:
                 menudeAyuda();
                 return true;
+            case R.id.menuCerrarSesion:
+                salirAplicacion();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 
     private void menudeAyuda() {
         //Cuadro de dialogo de ayuda con un boton de aceptar
@@ -192,6 +195,31 @@ public void CargarLista(ArrayList<String> datos){
             public void onClick(DialogInterface dialog, int which) {
                 //  Toast.makeText(MenuActivity.this,"Saliendo...",Toast.LENGTH_LONG).show();
                 closeContextMenu();
+            }
+        });
+
+        Dialog MostrarDialogo= Contruirdialogo.create();
+        MostrarDialogo.show();
+    }
+
+
+    private void salirAplicacion() {
+        onBackPressed();
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder Contruirdialogo = new AlertDialog.Builder(this);
+        Contruirdialogo.setTitle(R.string.DialogoOfertaTitle); //Titulo del cuadro de dialogo
+        Contruirdialogo.setMessage(getString(R.string.DialogoOfertaMenssage)); //Mensaje del texto que sale en el cuadro "Estas seguro que quieres salir de la aplicacion?
+        Contruirdialogo.setNegativeButton(R.string.DialogoOfertaBotonCancelar,null);
+        Contruirdialogo.setPositiveButton(R.string.DialogoOfertaBotonAceptar, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //  Toast.makeText(MenuActivity.this,"Saliendo...",Toast.LENGTH_LONG).show();
+                //finish();
+                finishAndRemoveTask();
             }
         });
 
