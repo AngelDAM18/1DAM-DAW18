@@ -7,7 +7,7 @@ import com.example.aplicacion3.R;
 
 public class detalleOferta extends AppCompatActivity {
 
-    private TextView nombreEmpresa,correo,fecha,telefono,localidad;
+    private TextView nombreEmpresa,correo,fecha,telefono,localidad,descripcion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +21,15 @@ public class detalleOferta extends AppCompatActivity {
         telefono=findViewById(R.id.detalleOfertaTelefono);
         localidad=findViewById(R.id.detalleOfertaLocalidad);
 
+        descripcion=findViewById(R.id.detalleOfertaDescripcion);
+
         inicializarInformacion();
     }
 
     private void inicializarInformacion() {
 
         // it.putExtra("ID",
-        //            it.putExtra("Descripcion",
+        //            it.putExtra("",
         //            it.putExtra("IdUsuario",
         //            it.putExtra("",
 
@@ -35,13 +37,15 @@ public class detalleOferta extends AppCompatActivity {
         //CorreoEmpresa
         //FechaPublicacion
         //Telefono
+        //Descripcion
 
         Bundle info = getIntent().getExtras();
         nombreEmpresa.setText(info.getString("NombreEmpresa"));
-        correo.setText("Correo: " +info.getString("CorreoEmpresa"));
+        correo.setText(info.getString("CorreoEmpresa"));
         fecha.setText(info.getString("FechaPublicacion"));
         telefono.setText(info.getString("Telefono"));
         localidad.setText(info.getString("Localidad"));
+        descripcion.setText(info.getString("Descripcion"));
 
     }
 }
