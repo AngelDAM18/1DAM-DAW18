@@ -30,5 +30,11 @@
     <string name="DialogoOfertaMenssage">¿Estas seguro que quieres salir de la aplicacion?</string>
     <string name="DialogoOfertaBotonCancelar">Cancelar</string>
     <string name="DialogoOfertaBotonAceptar">Aceptar</string>
+    <string name="nombre_empresa">Nombre empresa</string>
+    <string name="correo">Correo:</string>
+    <string name="telefono">telefono</string>
+    <string name="localidad">localidad</string>
+    <string name="fecha">fecha</string>
+    <string name="descripcion">Descripcion</string>
 
 </resources>

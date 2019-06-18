@@ -75,7 +75,7 @@ public class listaoferta extends AppCompatActivity {
 public ArrayList<String> obtieneDatosJSON(String responseBody){
 
     ArrayList<String> listado = new ArrayList<>();
-
+        listaTablaOfertas.clear();
     try {
         JSONArray obtejoJSON= new JSONArray(responseBody);
 
@@ -83,7 +83,7 @@ public ArrayList<String> obtieneDatosJSON(String responseBody){
 
         for (int i =0;i<obtejoJSON.length();i++){
             texto = //obtejoJSON.getJSONObject(i).getString("id") + " " +
-                    obtejoJSON.getJSONObject(i).getString("empresa") +" "+
+                    obtejoJSON.getJSONObject(i).getString("empresa") +" Fecha: "+
                     obtejoJSON.getJSONObject(i).getString("fechaPublicacion");
             listado.add(texto);
 
